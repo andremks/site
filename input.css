@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Uncial+Antiqua&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Plus Jakarta Sans", serif;
+    cursor: url('assets/cursor.png'), auto;
+    background-color: #F2F6FF;
+    color: #333333;
+}
+h1{
+    font-family: "Uncial Antiqua", serif;
+}
+
+
+
+
+
+.nav {
+  background: rgba(255, 255, 255, .3);
+  box-shadow: 0 16px 60px rgba(42, 13, 93, .16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #FFF;
+}
+
+
+
+
+
+@theme {
+    --color-indigo: #5D13E7;
+    --color-lime: #00FFAB;
+
+    --color-branco: #FFF;
+    --color-light: #F2F6FF;
+
+    --color-cinzalight: #797979;
+    --color-cinza01: #333333;
+    --color-cinza02: #222222;
+    --color-cinza03: #111111;
+    --color-preto: #000;
+  }
+
+
+
+
+
+/*EFICAZ*/
+.sEficaz:hover{
+  box-shadow: 0 32px 64px rgba(0, 71, 255, .4);
+}
+.eficazColor{
+  color: #0047fd;
+}
+
+
+
+/*REDROCKET*/
+.rColor:hover{
+  box-shadow: 0 32px 64px rgba(255, 77, 0, .4);
+}
+.rocketColor{
+  color: #ff4d00;
+}
+
+
+
+
+/*HIGHLLIGHT*/
+.sHighlight:hover{
+  box-shadow: 0 32px 64px rgba(148, 207, 28, .8);
+}
+.highlightColor{
+  color: #A8CF45;
+}
+
+
+
+
+/*IMERSÃO*/
+.sImersao:hover{
+  box-shadow: 0 32px 64px rgba(255, 0, 0, .4);
+}
+.imersaotColor{
+  color: #FF0000;
+}
+
+
+
+
+
+
+  /* scroll */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F2F6FF;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #5D13E7;
+    border-radius: 35px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00FFAB; 
+  }
