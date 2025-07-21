@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="src/output.css" />
   <link rel="icon" href="img/logoAM.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <title>André Marques - Designer de interfaces e experiência do usuário.</title>
 
   <style>
@@ -58,61 +57,6 @@
     .nav-delay {
       animation-delay: 1.9s !important;
     }
-
-
-
-    /*
-    SLIDE LOOP 
-    */
-    .slide-container {
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .slide-track {
-            display: flex;
-            animation: slide 30s linear infinite;
-            width: 300%;
-        }
-        
-        .slide-item {
-            flex-shrink: 0;
-            margin: 0 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-33.33%);
-            }
-        }
-        
-        .slide-track:hover {
-            animation-play-state: paused;
-        }
-
-        /* Desktop e Tablet - 9 imagens visíveis */
-        @media (min-width: 769px) {
-            .slide-item {
-                width: calc(100% / 9 - 10px);
-                min-width: calc(100% / 9 - 10px);
-                flex: 0 0 calc(100% / 9 - 10px);
-            }
-        }
-        
-        /* Mobile - 3 imagens visíveis */
-        @media (max-width: 768px) {
-            .slide-item {
-                width: calc(100% / 3 - 10px);
-                min-width: calc(100% / 3 - 10px);
-                flex: 0 0 calc(100% / 3 - 10px);
-            }
-        }
 
   </style>
 
@@ -215,7 +159,7 @@
     <p class="animate__animated animate__fadeInDown h1-p-delay mx-auto font-light md:max-w-[793px]">Melhorando a <span class="text-light02 font-bold">experiência do usuário</span>, um clique à frente. Desenhando interfaces <span class="text-light02 font-bold">intuitivas e eficazes</span> para ajudar os usuários a <span class="text-light02 font-bold">encontrar o que eles precisam</span>, rapidamente e com facilidade.</p>
 
 
-    <!--<figcaption class="animate__animated animate__flipInX animate__delay-1s container mx-auto mt-6 grid w-auto grid-cols-11 justify-items-center sm:w-1/2">
+    <figcaption class="animate__animated animate__flipInX animate__delay-1s container mx-auto mt-6 grid w-auto grid-cols-11 justify-items-center sm:w-1/2">
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg" alt="HTML5" title="HTML5" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg" alt="css3" title="Css3" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg" alt="javascript" title="Javascript" />
@@ -227,159 +171,7 @@
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg" alt="Photoshop" title="Photoshop" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg" alt="Illustrator" title="Illustrator" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg" alt="After Effect" title="After Effect" />
-    </figcaption>-->
-
-
-
-
-
-
-<div class="container mx-auto">
-        
-        <div class="animate__animated animate__flipInX animate__delay-1s">
-            <div class="slide-container mx-auto max-w-6xl">
-                <div class="slide-track">
-                    <!-- Primeiro set de imagens -->
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/html5.svg" alt="HTML5" title="HTML5" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/css3.svg" alt="css3" title="Css3" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/js.svg" alt="javascript" title="Javascript" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/tailwind.svg" alt="Tailwind Css" title="Tailwind Css" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/bootstrap.svg" alt="Bootstrap 5" title="Bootstrap 5" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/wp.svg" alt="WordPress" title="WordPress" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/elementor.svg" alt="Elementor" title="Elementor" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/figma 1.svg" alt="Figma" title="Figma" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/ps.svg" alt="Photoshop" title="Photoshop" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/ai.svg" alt="Illustrator" title="Illustrator" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/after.svg" alt="After Effect" title="After Effect" />
-                    </div>
-                    
-                    <!-- Segundo set de imagens (duplicado para efeito infinito) -->
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/html5.svg" alt="HTML5" title="HTML5" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/css3.svg" alt="css3" title="Css3" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/js.svg" alt="javascript" title="Javascript" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/tailwind.svg" alt="Tailwind Css" title="Tailwind Css" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/bootstrap.svg" alt="Bootstrap 5" title="Bootstrap 5" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/wp.svg" alt="WordPress" title="WordPress" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/elementor.svg" alt="Elementor" title="Elementor" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/figma 1.svg" alt="Figma" title="Figma" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/ps.svg" alt="Photoshop" title="Photoshop" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/ai.svg" alt="Illustrator" title="Illustrator" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/after.svg" alt="After Effect" title="After Effect" />
-                    </div>
-                    
-                    <!-- Terceiro set de imagens (para loop perfeito) -->
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/html5.svg" alt="HTML5" title="HTML5" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/css3.svg" alt="css3" title="Css3" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/js.svg" alt="javascript" title="Javascript" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/tailwind.svg" alt="Tailwind Css" title="Tailwind Css" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/bootstrap.svg" alt="Bootstrap 5" title="Bootstrap 5" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/wp.svg" alt="WordPress" title="WordPress" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/elementor.svg" alt="Elementor" title="Elementor" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/figma 1.svg" alt="Figma" title="Figma" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/ps.svg" alt="Photoshop" title="Photoshop" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/ai.svg" alt="Illustrator" title="Illustrator" />
-                    </div>
-                    <div class="slide-item">
-                        <img class="w-16 h-16 mx-auto transition-transform duration-300 hover:-translate-y-1 cursor-pointer" 
-                             src="img/after.svg" alt="After Effect" title="After Effect" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </figcaption>
 
 
 
