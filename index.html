@@ -72,13 +72,15 @@
         .slide-track {
             display: flex;
             animation: slide 30s linear infinite;
-            width: calc(300% + 60px);
+            width: 300%;
         }
         
         .slide-item {
-            min-width: calc(33.33% - 10px);
-            margin: 0 5px;
             flex-shrink: 0;
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         @keyframes slide {
@@ -94,16 +96,21 @@
             animation-play-state: paused;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
+        /* Desktop e Tablet - 9 imagens visíveis */
+        @media (min-width: 769px) {
             .slide-item {
-                min-width: calc(11.11% - 10px);
+                width: calc(100% / 9 - 10px);
+                min-width: calc(100% / 9 - 10px);
+                flex: 0 0 calc(100% / 9 - 10px);
             }
         }
         
+        /* Mobile - 3 imagens visíveis */
         @media (max-width: 768px) {
             .slide-item {
-                min-width: calc(25% - 10px);
+                width: calc(100% / 3 - 10px);
+                min-width: calc(100% / 3 - 10px);
+                flex: 0 0 calc(100% / 3 - 10px);
             }
         }
 
@@ -227,8 +234,8 @@
 
 
 
-
-    <div class="container mx-auto">        
+<div class="container mx-auto">
+        
         <div class="animate__animated animate__flipInX animate__delay-1s">
             <div class="slide-container mx-auto max-w-6xl">
                 <div class="slide-track">
@@ -373,6 +380,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+    
 
 
     
