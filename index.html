@@ -73,7 +73,7 @@
           animation: marquee 8s linear infinite;
         }
       `;
-      const style = document.createElement('style');
+      let style = document.createElement('style');
       style.appendChild(document.createTextNode(css));
       document.head.appendChild(style);
     })();
@@ -190,39 +190,43 @@
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg" alt="After Effect" title="After Effect" />
     </figcaption>-->
 
-    <!-- Marquee animado com espaçamento igual entre os logos -->
-<div class="overflow-hidden py-6 bg-white">
-  <div class="flex animate-marquee">
-    <!-- Primeiro grupo de logos -->
-    <div class="flex justify-between w-[1800px] min-w-full">
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"      alt="HTML5"        title="HTML5" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"       alt="CSS3"         title="Css3" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"         alt="Javascript"   title="Javascript" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg"   alt="Tailwind Css" title="Tailwind Css" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg"  alt="Bootstrap 5"  title="Bootstrap 5" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"         alt="WordPress"    title="WordPress" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"  alt="Elementor"    title="Elementor" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma 1.svg"    alt="Figma"        title="Figma" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"         alt="Photoshop"    title="Photoshop" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"         alt="Illustrator"  title="Illustrator" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"      alt="After Effect" title="After Effect" />
-    </div>
-    <!-- Segundo grupo igual para efeito contínuo -->
-    <div class="flex justify-between w-[1800px] min-w-full">
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"      alt="HTML5"        title="HTML5" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"       alt="CSS3"         title="Css3" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"         alt="Javascript"   title="Javascript" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg"   alt="Tailwind Css" title="Tailwind Css" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg"  alt="Bootstrap 5"  title="Bootstrap 5" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"         alt="WordPress"    title="WordPress" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"  alt="Elementor"    title="Elementor" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma 1.svg"    alt="Figma"        title="Figma" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"         alt="Photoshop"    title="Photoshop" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"         alt="Illustrator"  title="Illustrator" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"      alt="After Effect" title="After Effect" />
+
+<!-- MARQUEE -->
+  <div class="overflow-hidden w-full bg-white py-6">
+    <div class="inline-flex animate-marquee whitespace-nowrap">
+      
+      <!-- primeiro bloco de logos -->
+      <div class="flex items-center space-x-6">
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"      alt="HTML5"        title="HTML5" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"       alt="CSS3"         title="Css3" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"         alt="Javascript"   title="Javascript" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg"   alt="Tailwind Css" title="Tailwind Css" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg"  alt="Bootstrap 5"  title="Bootstrap 5" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"         alt="WordPress"    title="WordPress" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"  alt="Elementor"    title="Elementor" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma 1.svg"    alt="Figma"        title="Figma" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"         alt="Photoshop"    title="Photoshop" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"         alt="Illustrator"  title="Illustrator" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"      alt="After Effect" title="After Effect" />
+      </div>
+
+      <!-- segundo bloco duplicado para loop suave -->
+      <div class="flex items-center space-x-6">
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"      alt="HTML5"        title="HTML5" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"       alt="CSS3"         title="Css3" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"         alt="Javascript"   title="Javascript" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg"   alt="Tailwind Css" title="Tailwind Css" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg"  alt="Bootstrap 5"  title="Bootstrap 5" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"         alt="WordPress"    title="WordPress" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"  alt="Elementor"    title="Elementor" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma 1.svg"    alt="Figma"        title="Figma" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"         alt="Photoshop"    title="Photoshop" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"         alt="Illustrator"  title="Illustrator" />
+        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"      alt="After Effect" title="After Effect" />
+      </div>
+
     </div>
   </div>
-</div>
 
 
 
