@@ -59,38 +59,25 @@
       animation-delay: 1.9s !important;
     }
 
-    /* num arquivo global ou @layer components */
-    .animate-marquee:hover {
-      animation-play-state: paused;
-    }
-    .animate-marquee {
-      animation: marquee 8s linear infinite reverse;
-    }
-
   </style>
 
-
   <script>
-  (function(){
-    const css = `
-      @keyframes marquee {
-        0%   { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-      }
-      .animate-marquee {
-        animation: marquee 8s linear infinite;
-      }
-    `;
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    if (style.styleSheet) {
-      style.styleSheet.cssText = css;
-    } else {
+    (function(){
+      const css = `
+        @keyframes marquee {
+          0%   { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 8s linear infinite;
+        }
+      `;
+      const style = document.createElement('style');
       style.appendChild(document.createTextNode(css));
-    }
-    document.head.appendChild(style);
-  })();
-  </script>
+      document.head.appendChild(style);
+    })();
+</script>
+
 
   
 </head>
@@ -200,32 +187,26 @@
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg" alt="After Effect" title="After Effect" />
     </figcaption>-->
 
-    <figcaption class="overflow-hidden relative container mx-auto mt-6 sm:w-1/2">
-  <!-- wrapper animado -->
-  <div class="flex items-center whitespace-nowrap animate-marquee">
-    <!-- repita seu bloco de imagens duas vezes -->
-    <div class="flex space-x-6">
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"    alt="HTML5"      title="HTML5" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"     alt="CSS3"       title="CSS3" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"       alt="JavaScript" title="JavaScript" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg" alt="Tailwind"    title="Tailwind CSS" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg" alt="Bootstrap"   title="Bootstrap 5" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"       alt="WordPress"   title="WordPress" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"alt="Elementor"   title="Elementor" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma.svg"    alt="Figma"       title="Figma" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"       alt="Photoshop"   title="Photoshop" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"       alt="Illustrator" title="Illustrator" />
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"    alt="After Effects" title="After Effects" />
+    <div class="overflow-hidden py-6">
+      <div class="flex items-center whitespace-nowrap animate-marquee">
+        <div class="flex items-center space-x-16">
+          <img src="logo1.png" alt="logo 1" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo2.png" alt="logo 2" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo3.png" alt="logo 3" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo4.png" alt="logo 4" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo5.png" alt="logo 5" class="opacity-60 hover:opacity-100 transition-opacity">
+        </div>
+        <!-- repetir para suavizar o loop -->
+        <div class="flex items-center space-x-16 ml-16">
+          <img src="logo1.png" alt="logo 1" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo2.png" alt="logo 2" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo3.png" alt="logo 3" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo4.png" alt="logo 4" class="opacity-60 hover:opacity-100 transition-opacity">
+          <img src="logo5.png" alt="logo 5" class="opacity-60 hover:opacity-100 transition-opacity">
+        </div>
+      </div>
     </div>
-    <!-- duplicação -->
-    <div class="flex space-x-6">
-      <!-- copie exatamente o mesmo conjunto de imgs aqui -->
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"    alt="HTML5"      title="HTML5" />
-      <!-- …repita todas as 11 imagens… -->
-      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"    alt="After Effects" title="After Effects" />
-    </div>
-  </div>
-</figcaption>
+
 
 
     <div class="flex flex-wrap justify-center gap-4 pt-4">
