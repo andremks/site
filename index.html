@@ -63,29 +63,6 @@
   </style>
 
 
- <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.mySwiper', {
-      slidesPerView: 9,
-      spaceBetween: 24,           // ajuste o gap
-      loop: true,
-      autoplay: {
-        delay: 2500,              // tempo entre slides
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,  // pausa ao passar o mouse
-      },
-      navigation: false,
-      pagination: false,
-      breakpoints: {
-        320:  { slidesPerView: 3, spaceBetween: 12 },
-        640:  { slidesPerView: 5, spaceBetween: 16 },
-        1024: { slidesPerView: 9, spaceBetween: 24 },
-      },
-    });
-  });
-</script>
 
 
 
@@ -616,6 +593,33 @@
     });
 
     animatedSections.forEach(section => observer.observe(section));
+  });
+</script>
+
+
+
+  
+ <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.mySwiper', {
+      slidesPerView: 9,
+      spaceBetween: 24,           // ajuste o gap
+      loop: true,
+      autoplay: {
+        delay: 2500,              // tempo entre slides
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,  // pausa ao passar o mouse
+      },
+      navigation: false,
+      pagination: false,
+      breakpoints: {
+        320:  { slidesPerView: 3, spaceBetween: 12 },
+        640:  { slidesPerView: 5, spaceBetween: 16 },
+        1024: { slidesPerView: 9, spaceBetween: 24 },
+      },
+    });
   });
 </script>
 
