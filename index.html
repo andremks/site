@@ -59,7 +59,40 @@
       animation-delay: 1.9s !important;
     }
 
+    /* num arquivo global ou @layer components */
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    .animate-marquee {
+      animation: marquee 8s linear infinite reverse;
+    }
+
   </style>
+
+
+  <script>
+  (function(){
+    const css = `
+      @keyframes marquee {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+      .animate-marquee {
+        animation: marquee 8s linear infinite;
+      }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    if (style.styleSheet) {
+      style.styleSheet.cssText = css;
+    } else {
+      style.appendChild(document.createTextNode(css));
+    }
+    document.head.appendChild(style);
+  })();
+  </script>
+
+  
 </head>
 
 <body class="bg-bg font-plus-jakarta text-light01 scroll-smooth">
@@ -153,7 +186,7 @@
     <p class="animate__animated animate__fadeInDown h1-p-delay mx-auto font-light md:max-w-[793px]">Melhorando a <span class="text-light02 font-bold">experiência do usuário</span>, um clique à frente. Desenhando interfaces <span class="text-light02 font-bold">intuitivas e eficazes</span> para ajudar os usuários a <span class="text-light02 font-bold">encontrar o que eles precisam</span>, rapidamente e com facilidade.</p>
 
 
-    <figcaption class="animate__animated animate__flipInX animate__delay-1s container mx-auto mt-6 grid w-auto grid-cols-11 justify-items-center sm:w-1/2">
+    <!--<figcaption class="animate__animated animate__flipInX animate__delay-1s container mx-auto mt-6 grid w-auto grid-cols-11 justify-items-center sm:w-1/2">
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg" alt="HTML5" title="HTML5" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg" alt="css3" title="Css3" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg" alt="javascript" title="Javascript" />
@@ -165,7 +198,35 @@
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg" alt="Photoshop" title="Photoshop" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg" alt="Illustrator" title="Illustrator" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg" alt="After Effect" title="After Effect" />
-    </figcaption>
+    </figcaption>-->
+
+    <figcaption class="overflow-hidden relative container mx-auto mt-6 sm:w-1/2">
+  <!-- wrapper animado -->
+  <div class="flex items-center whitespace-nowrap animate-marquee">
+    <!-- repita seu bloco de imagens duas vezes -->
+    <div class="flex space-x-6">
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"    alt="HTML5"      title="HTML5" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"     alt="CSS3"       title="CSS3" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"       alt="JavaScript" title="JavaScript" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg" alt="Tailwind"    title="Tailwind CSS" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg" alt="Bootstrap"   title="Bootstrap 5" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"       alt="WordPress"   title="WordPress" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"alt="Elementor"   title="Elementor" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma.svg"    alt="Figma"       title="Figma" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"       alt="Photoshop"   title="Photoshop" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"       alt="Illustrator" title="Illustrator" />
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"    alt="After Effects" title="After Effects" />
+    </div>
+    <!-- duplicação -->
+    <div class="flex space-x-6">
+      <!-- copie exatamente o mesmo conjunto de imgs aqui -->
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"    alt="HTML5"      title="HTML5" />
+      <!-- …repita todas as 11 imagens… -->
+      <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"    alt="After Effects" title="After Effects" />
+    </div>
+  </div>
+</figcaption>
+
 
     <div class="flex flex-wrap justify-center gap-4 pt-4">
       <a href="#portfolio" class="group animate__animated animate__flipInX btn-delay inline-flex items-center gap-2 rounded border border-white px-8 py-3 font-light text-white transition duration-300 hover:scale-110 hover:bg-white hover:text-black">
