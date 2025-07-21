@@ -61,26 +61,6 @@
 
   </style>
 
-  <!-- CSS da animação (via JS, pode ficar no <head> ou antes do </body>) -->
-  <script>
-    (function(){
-      const css = `
-        @keyframes marquee {
-          0%   { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 8s linear infinite;
-        }
-      `;
-      let style = document.createElement('style');
-      style.appendChild(document.createTextNode(css));
-      document.head.appendChild(style);
-    })();
-  </script>
-
-
-
 
   
 </head>
@@ -547,6 +527,26 @@
     animatedSections.forEach(section => observer.observe(section));
   });
 </script>
+
+
+
+   <!-- CSS da animação (via JS, pode ficar no <head> ou antes do </body>) -->
+  <script>
+    (function(){
+      const css = `
+        @keyframes marquee {
+          0%   { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 8s linear infinite;
+        }
+      `;
+      let style = document.createElement('style');
+      style.appendChild(document.createTextNode(css));
+      document.head.appendChild(style);
+    })();
+  </script>
 
 
 
