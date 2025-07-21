@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="src/output.css" />
   <link rel="icon" href="img/logoAM.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <title>André Marques - Designer de interfaces e experiência do usuário.</title>
 
   <style>
@@ -62,21 +63,28 @@
   </style>
 
 
- <script>
-(function(){
-  const css = `
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-      animation: marquee 8s linear infinite;
-    }
-  `;
-  const style = document.createElement('style');
-  style.appendChild(document.createTextNode(css));
-  document.head.appendChild(style);
-})();
+ <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.mySwiper', {
+      slidesPerView: 9,
+      spaceBetween: 24,           // ajuste o gap
+      loop: true,
+      autoplay: {
+        delay: 2500,              // tempo entre slides
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,  // pausa ao passar o mouse
+      },
+      navigation: false,
+      pagination: false,
+      breakpoints: {
+        320:  { slidesPerView: 3, spaceBetween: 12 },
+        640:  { slidesPerView: 5, spaceBetween: 16 },
+        1024: { slidesPerView: 9, spaceBetween: 24 },
+      },
+    });
+  });
 </script>
 
 
@@ -189,35 +197,105 @@
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg" alt="Illustrator" title="Illustrator" />
       <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg" alt="After Effect" title="After Effect" />
     </figcaption>-->
-<div class="overflow-hidden w-full bg-transparent py-6">
-  <div class="relative w-full" style="height:48px;">
-    <div class="absolute left-0 top-0 flex animate-marquee w-max">
-      <!-- bloco único com flex e espaçamento -->
-      <div class="flex items-center gap-8">
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"      alt="HTML5"        title="HTML5" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"       alt="CSS3"         title="Css3" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"         alt="Javascript"   title="Javascript" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg"   alt="Tailwind Css" title="Tailwind Css" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg"  alt="Bootstrap 5"  title="Bootstrap 5" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"         alt="WordPress"    title="WordPress" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"  alt="Elementor"    title="Elementor" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma 1.svg"    alt="Figma"        title="Figma" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"         alt="Photoshop"    title="Photoshop" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"         alt="Illustrator"  title="Illustrator" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"      alt="After Effect" title="After Effect" />
-        <!-- Duplicação para loop contínuo -->
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/html5.svg"      alt="HTML5"        title="HTML5" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/css3.svg"       alt="CSS3"         title="Css3" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/js.svg"         alt="Javascript"   title="Javascript" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/tailwind.svg"   alt="Tailwind Css" title="Tailwind Css" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/bootstrap.svg"  alt="Bootstrap 5"  title="Bootstrap 5" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/wp.svg"         alt="WordPress"    title="WordPress" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/elementor.svg"  alt="Elementor"    title="Elementor" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/figma 1.svg"    alt="Figma"        title="Figma" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ps.svg"         alt="Photoshop"    title="Photoshop" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/ai.svg"         alt="Illustrator"  title="Illustrator" />
-        <img class="transition hover:-translate-y-1 hover:scale-110" src="img/after.svg"      alt="After Effect" title="After Effect" />
+
+
+
+
+
+    <!-- HTML do Slider -->
+<div class="w-full py-6 bg-transparent">
+  <div class="swiper mySwiper w-full">
+    <div class="swiper-wrapper">
+      <!-- Cada slide é uma imagem -->
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/html5.svg"
+          alt="HTML5"
+          title="HTML5"
+        />
       </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/css3.svg"
+          alt="CSS3"
+          title="Css3"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/js.svg"
+          alt="Javascript"
+          title="Javascript"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/tailwind.svg"
+          alt="Tailwind Css"
+          title="Tailwind Css"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/bootstrap.svg"
+          alt="Bootstrap 5"
+          title="Bootstrap 5"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/wp.svg"
+          alt="WordPress"
+          title="WordPress"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/elementor.svg"
+          alt="Elementor"
+          title="Elementor"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/figma 1.svg"
+          alt="Figma"
+          title="Figma"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/ps.svg"
+          alt="Photoshop"
+          title="Photoshop"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/ai.svg"
+          alt="Illustrator"
+          title="Illustrator"
+        />
+      </div>
+      <div class="swiper-slide flex justify-center">
+        <img
+          class="transition hover:-translate-y-1 hover:scale-110"
+          src="img/after.svg"
+          alt="After Effect"
+          title="After Effect"
+        />
+      </div>
+      <!-- Repita as mesmas imagens se quiser ainda mais continuidade -->
     </div>
   </div>
 </div>
