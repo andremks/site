@@ -79,6 +79,58 @@
             opacity: 1;
             pointer-events: auto;
         }
+
+        /* Scroll Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+        }
+
+        .reveal.active {
+            animation-fill-mode: forwards;
+        }
+
+        .animate-fade-up.active {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .animate-fade-up-delayed-1.active {
+            animation: fadeInUp 0.2s ease forwards;
+            animation-delay: 200ms;
+        }
+
+        .animate-fade-up-delayed-2.active {
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 400ms;
+        }
+
+        .animate-fade-in.active {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .animate-fade-in-delayed.active {
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 200ms;
+        }
     </style>
 </head>
 
@@ -115,19 +167,20 @@
                 <span class="text-xs uppercase tracking-widest text-slate-500">Contato</span>
                 <a href="https://web.whatsapp.com/send?phone=5514997560898" target="_blank"
                     class="text-xl hover:text-primary transition-colors">WhatsApp</a>
-                <a href="#" class="text-xl hover:text-primary transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/andremarquesmks/" target="_blank"
+                    class="text-xl hover:text-primary transition-colors">LinkedIn</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative w-full min-h-screen flex items-center overflow-hidden py-20">
+    <header class="relative w-full min-h-screen flex items-center overflow-hidden py-20 reveal animate-fade-in">
         <!-- Overlay Texture/Color if needed to ensure text readability over bg.png -->
         <!-- <div class="absolute inset-0 bg-slate-900/40 pointer-events-none"></div> -->
 
         <div class="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
 
             <!-- Logo -->
-            <div class="absolute top-2 left-6 md:left-12">
+            <div class="absolute top-2 left-6 md:left-12 reveal animate-fade-in-delayed">
                 <img src="assets/Logo.png" alt="Logo" class="h-12 w-auto">
             </div>
 
@@ -135,17 +188,19 @@
 
                 <!-- Conteúdo Textual Alinhado à Esquerda -->
                 <div class="w-full flex flex-col gap-4">
-                    <div class="flex items-center gap-3 text-slate-200 text-sm md:text-lg">
+                    <div
+                        class="flex items-center gap-3 text-slate-200 text-sm md:text-lg reveal animate-fade-up-delayed-1">
                         <span>&mdash; Ux/Ui Designer / WordPress Full-Stack</span>
                         <img src="assets/checkAndre.png" alt="Verified" class="w-5 h-5">
                     </div>
 
                     <h1
-                        class="text-7xl md:text-8xl lg:text-[9rem] font-bold text-white leading-[0.8] py-2 drop-shadow-2xl">
+                        class="text-7xl md:text-8xl lg:text-[9rem] font-bold text-white leading-[0.8] py-2 drop-shadow-2xl reveal animate-fade-up">
                         André<br>Marques
                     </h1>
 
-                    <p class="text-sm sm:text-xl text-slate-400 leading-relaxed max-w-2xl drop-shadow-md">
+                    <p
+                        class="text-sm sm:text-xl text-slate-400 leading-relaxed max-w-2xl drop-shadow-md reveal animate-fade-up-delayed-2">
                         Transformo ideias em <strong class="text-white font-semibold">experiências digitais
                             melhores</strong>, do design à entrega, com <strong
                             class="text-white font-semibold">protótipos no Figma</strong>, interfaces intuitivas e
@@ -153,8 +208,8 @@
                         back-end) para tornar a navegação mais simples e fluida
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto pt-2">
-                        <a href="#"
+                    <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto pt-2 reveal animate-fade-up-delayed-2">
+                        <a href="#portfolio"
                             class="px-8 py-4 bg-transparent text-white font-medium border border-slate-600 hover:border-slate-400 hover:bg-white/5 transition-all duration-300 flex items-center justify-center gap-3 group min-w-[200px]">
                             Acessar Portfólio
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -191,7 +246,7 @@
                                 </defs>
                             </svg>
                         </a>
-                        <a href="#"
+                        <a href="https://web.whatsapp.com/send?phone=5514997560898" target="_blank"
                             class="px-8 py-4 bg-white text-slate-950 font-bold hover:bg-slate-200 transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg hover:shadow-xl min-w-[200px]">
                             Entrar em Contato
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -219,12 +274,13 @@
         </div>
     </header>
 
-    <section class="relative w-full py-24 bg-slate-950/60 backdrop-blur-lg border-t border-slate-800">
+    <section
+        class="relative w-full py-24 bg-slate-950/60 backdrop-blur-lg border-t border-slate-800 reveal animate-fade-in">
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
 
                 <!-- Card 1: Figma -->
-                <div class="flex flex-col items-start gap-6 group">
+                <div class="flex flex-col items-start gap-6 group reveal animate-fade-up-delayed-1">
                     <div
                         class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-all duration-500 group-hover:scale-110">
                         <img src="assets/figma.png" alt="Figma" class="w-6 h-auto">
@@ -242,7 +298,7 @@
                 </div>
 
                 <!-- Card 2: WordPress -->
-                <div class="flex flex-col items-start gap-6 group">
+                <div class="flex flex-col items-start gap-6 group reveal animate-fade-up-delayed-1">
                     <div
                         class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-all duration-500 group-hover:scale-110">
                         <img src="assets/WordPress.png" alt="WordPress" class="w-7 h-auto">
@@ -260,7 +316,7 @@
                 </div>
 
                 <!-- Card 3: Back-end & Front-end -->
-                <div class="flex flex-col items-start gap-6 group">
+                <div class="flex flex-col items-start gap-6 group reveal animate-fade-up-delayed-1">
                     <div
                         class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-all duration-500 group-hover:scale-110">
                         <img src="assets/Code.png" alt="Code" class="w-7 h-auto">
@@ -290,19 +346,20 @@
 
                 <!-- Coluna Texto -->
                 <div class="flex flex-col items-start order-2 lg:order-1">
-                    <div class="flex items-center gap-2 text-slate-400 text-sm font-medium mb-2">
+                    <div
+                        class="flex items-center gap-2 text-slate-400 text-sm font-medium mb-2 reveal animate-fade-up-delayed-1">
                         <span>&mdash; Sobre</span>
                     </div>
 
-                    <h2 class="text-5xl font-bold tracking-tight mb-4">
+                    <h2 class="text-5xl font-bold tracking-tight mb-4 reveal animate-fade-up">
                         André, Designer UX/UI
                     </h2>
 
-                    <div class="w-full max-w-lg mb-8">
+                    <div class="w-full max-w-lg mb-8 reveal animate-fade-in-delayed">
                         <img src="assets/ferramentas.png" alt="Ferramentas" class="w-full h-auto">
                     </div>
 
-                    <div class="flex flex-col text-slate-400 text-base max-w-2xl">
+                    <div class="flex flex-col text-slate-400 text-base max-w-2xl reveal animate-fade-up-delayed-2">
                         <p class="text-white">
                             Sou <strong class="font-semibold">André, Designer UX/UI</strong> com foco em
                             e-commerce e landing pages. Crio wireframes, protótipos de alta fidelidade e fluxos de
@@ -335,7 +392,7 @@
                         </ul>
                     </div>
 
-                    <div class="mt-8">
+                    <div class="mt-8 reveal animate-fade-up-delayed-2">
                         <a href="#"
                             class="px-8 py-4 bg-white text-slate-950 font-bold hover:bg-slate-200 transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg">
                             Entrar em Contato
@@ -361,7 +418,7 @@
                 </div>
 
                 <!-- Coluna Foto Interativa -->
-                <div class="flex justify-center order-1 lg:order-2">
+                <div class="flex justify-center order-1 lg:order-2 reveal animate-fade-in">
                     <div class="relative group cursor-pointer">
                         <!-- Camadas de Bordas e Glow -->
                         <div
@@ -396,13 +453,13 @@
 
             <!-- Título da Seção -->
             <div class="flex flex-col items-center text-center mb-24">
-                <div class="flex items-center text-sm font-medium">
+                <div class="flex items-center text-sm font-medium reveal animate-fade-up-delayed-1">
                     <span>&mdash; Portfólio &mdash;</span>
                 </div>
-                <h2 class="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter py-4">
+                <h2 class="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter py-4 reveal animate-fade-up">
                     Portfólio de design
                 </h2>
-                <p>
+                <p class="reveal animate-fade-up-delayed-2">
                     focado em resolver problemas e melhorar a experiência do usuário.
                 </p>
             </div>
@@ -412,7 +469,7 @@
 
                 <!-- Card 1: Eficaz Marketing -->
                 <a href="https://eficazmarketing.com/" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
+                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group reveal animate-fade-in">
                     <div
                         class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgEficaz.png" alt="Eficaz Marketing" class="w-full h-full object-cover">
@@ -421,7 +478,7 @@
 
                 <!-- Card 2: Highlight -->
                 <a href="https://highlightoficial.com/" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
+                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group reveal animate-fade-in">
                     <div
                         class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgHighlight.png" alt="Highlight" class="w-full h-full object-cover">
@@ -431,7 +488,7 @@
                 <!-- Card 3: Imersão -->
                 <a href="https://www.behance.net/gallery/210609843/Landing-Page-Imersao-Formar-e-Aproximar"
                     target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
+                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group reveal animate-fade-in">
                     <div
                         class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgImersão.png" alt="Imersão" class="w-full h-full object-cover">
@@ -440,7 +497,7 @@
 
                 <!-- Card 4: Star Ads -->
                 <a href="https://www.starads.com.br/" target="_blank" rel="noopener noreferrer"
-                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
+                    class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group reveal animate-fade-in">
                     <div
                         class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgStarads.png" alt="Star Ads" class="w-full h-full object-cover">
@@ -695,6 +752,26 @@
                 animate();
             });
         }
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we can stop observing this element
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
     </script>
 
 </body>
