@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>André Marques - Portfólio</title>
+    <title>André Marques - Ux/Ui Designer / WordPress Full-Stack</title>
     <!-- Dynamic Favicon Control -->
     <link rel="icon" id="favicon" type="image/png" href="assets/faviconDark.png">
     <script>
@@ -28,8 +28,16 @@
         rel="stylesheet">
     <style type="text/tailwindcss">
         @theme {
-            --color-primary: #3b82f6;
+            --color-primary: #0c2de8;
             --font-sans: "Bricolage Grotesque", sans-serif;
+        }
+
+        html, body {
+            cursor: url('assets/cursor2.svg'), auto;
+        }
+
+        a, button, [role="button"], .cursor-pointer {
+            cursor: url('assets/cursor2.svg'), pointer;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -40,7 +48,7 @@
         }
 
         header {
-            background-image: url('assets/bgMobile.png');
+            background-image: url('assets/bgMobile2.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -59,11 +67,58 @@
                 background-image: none;
             }
         }
+
+        /* Menu Mobile Styles */
+
+        .menu-overlay {
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 
 <body
     class="bg-slate-900 text-slate-50 antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden font-sans">
+
+    <!-- Navbar / Hamburger Icon -->
+    <div class="fixed top-8 right-6 md:right-12 z-[100]">
+        <button id="menu-toggle"
+            class="w-12 h-12 flex flex-col items-end justify-center gap-1.5 focus:outline-none group cursor-pointer"
+            aria-label="Abrir menu">
+            <span
+                class="w-8 h-0.5 bg-white rounded-full transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-2 group-[.active]:w-10"></span>
+            <span class="w-5 h-0.5 bg-white rounded-full transition-all duration-300 group-[.active]:opacity-0"></span>
+            <span
+                class="w-8 h-0.5 bg-white rounded-full transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-2 group-[.active]:w-10"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay"
+        class="fixed inset-0 bg-slate-950/40 backdrop-blur-sm z-[80] opacity-0 pointer-events-none transition-opacity duration-400">
+    </div>
+
+    <!-- Side Menu -->
+    <nav id="mobile-menu"
+        class="fixed top-0 right-0 h-screen w-full md:w-[380px] bg-slate-950/20 backdrop-blur-2xl z-[90] border-l border-white/10 translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] flex flex-col p-12 pt-32">
+        <div class="flex flex-col gap-8">
+            <a href="#" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Home</a>
+            <a href="#sobre" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Sobre</a>
+            <a href="#portfolio" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Portfólio</a>
+
+            <div class="mt-12 pt-12 border-t border-white/5 flex flex-col gap-4">
+                <span class="text-xs uppercase tracking-widest text-slate-500">Contato</span>
+                <a href="https://web.whatsapp.com/send?phone=5514997560898" target="_blank"
+                    class="text-xl hover:text-primary transition-colors">WhatsApp</a>
+                <a href="#" class="text-xl hover:text-primary transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
 
     <header class="relative w-full min-h-screen flex items-center overflow-hidden py-20">
         <!-- Overlay Texture/Color if needed to ensure text readability over bg.png -->
@@ -72,11 +127,11 @@
         <div class="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
 
             <!-- Logo -->
-            <div class="absolute top-16 left-6 md:left-12">
+            <div class="absolute top-2 left-6 md:left-12">
                 <img src="assets/Logo.png" alt="Logo" class="h-12 w-auto">
             </div>
 
-            <div class="flex flex-col items-start max-w-3xl mt-32">
+            <div class="flex flex-col items-start max-w-3xl mt-18">
 
                 <!-- Conteúdo Textual Alinhado à Esquerda -->
                 <div class="w-full flex flex-col gap-4">
@@ -164,20 +219,22 @@
         </div>
     </header>
 
-    <section class="relative w-full py-24 bg-slate-950/20 backdrop-blur-lg border-t border-slate-800">
+    <section class="relative w-full py-24 bg-slate-950/60 backdrop-blur-lg border-t border-slate-800">
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
 
                 <!-- Card 1: Figma -->
                 <div class="flex flex-col items-start gap-6 group">
                     <div
-                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-colors">
+                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-all duration-500 group-hover:scale-110">
                         <img src="assets/figma.png" alt="Figma" class="w-6 h-auto">
                     </div>
-                    <h3 class="text-4xl md:text-5xl font-bold">
+                    <h3
+                        class="text-4xl md:text-5xl font-bold transition-transform duration-500 group-hover:scale-105 origin-left">
                         Figma<br>Prototype
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p
+                        class="text-slate-400 text-sm leading-relaxed transition-transform duration-500 group-hover:scale-[1.02] origin-left">
                         Protótipos interativos no Figma para testar ideias, <strong
                             class="text-white font-medium">validar fluxos e melhorar a experiência do usuário</strong>
                         antes do desenvolvimento.
@@ -187,13 +244,15 @@
                 <!-- Card 2: WordPress -->
                 <div class="flex flex-col items-start gap-6 group">
                     <div
-                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-colors">
+                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-all duration-500 group-hover:scale-110">
                         <img src="assets/WordPress.png" alt="WordPress" class="w-7 h-auto">
                     </div>
-                    <h3 class="text-4xl md:text-5xl font-bold">
+                    <h3
+                        class="text-4xl md:text-5xl font-bold transition-transform duration-500 group-hover:scale-105 origin-left">
                         Especialista<br>em WordPress
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p
+                        class="text-slate-400 text-sm leading-relaxed transition-transform duration-500 group-hover:scale-[1.02] origin-left">
                         Landing pages com Elementor criadas no WordPress para <strong
                             class="text-white font-medium">gerar conversões, usando layouts focados em ação</strong>,
                         design responsivo e edição visual rápida sem perder performance.
@@ -203,13 +262,15 @@
                 <!-- Card 3: Back-end & Front-end -->
                 <div class="flex flex-col items-start gap-6 group">
                     <div
-                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-colors">
+                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-900 border border-slate-800 shadow-inner group-hover:border-primary/50 transition-all duration-500 group-hover:scale-110">
                         <img src="assets/Code.png" alt="Code" class="w-7 h-auto">
                     </div>
-                    <h3 class="text-4xl md:text-5xl font-bold">
+                    <h3
+                        class="text-4xl md:text-5xl font-bold transition-transform duration-500 group-hover:scale-105 origin-left">
                         Back-end<br>& Front-end
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <p
+                        class="text-slate-400 text-sm leading-relaxed transition-transform duration-500 group-hover:scale-[1.02] origin-left">
                         Desenvolvo interfaces e lógicas de sistema unindo <strong
                             class="text-white font-medium">front-end e back-end para criar soluções funcionais</strong>,
                         completas e bem integradas.
@@ -221,7 +282,9 @@
     </section>
 
     <!-- Sobre Section -->
-    <section id="sobre" class="relative w-full py-32 bg-slate-950">
+    <section id="sobre" class="relative w-full py-32 px-2 bg-slate-950 overflow-hidden">
+        <!-- Canvas de Partículas (Desktop Only logic in JS) -->
+        <canvas class="particle-canvas absolute inset-0 pointer-events-none opacity-30"></canvas>
         <div class="container mx-auto px-2 md:px-12 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
 
@@ -231,7 +294,7 @@
                         <span>&mdash; Sobre</span>
                     </div>
 
-                    <h2 class="text-5xl md:text-4xl font-bold tracking-tight mb-4">
+                    <h2 class="text-5xl font-bold tracking-tight mb-4">
                         André, Designer UX/UI
                     </h2>
 
@@ -326,7 +389,9 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="relative w-full py-32 bg-slate-950">
+    <section id="portfolio" class="relative w-full py-32 bg-slate-950 overflow-hidden">
+        <!-- Canvas de Partículas (Desktop Only logic in JS) -->
+        <canvas class="particle-canvas absolute inset-0 pointer-events-none opacity-30"></canvas>
         <div class="container mx-auto px-2 relative z-10">
 
             <!-- Título da Seção -->
@@ -346,37 +411,38 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 <!-- Card 1: Eficaz Marketing -->
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://eficazmarketing.com/" target="_blank" rel="noopener noreferrer"
                     class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
                     <div
-                        class="relative overflow-hidden shadow-2xl rounded-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
+                        class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgEficaz.png" alt="Eficaz Marketing" class="w-full h-full object-cover">
                     </div>
                 </a>
 
                 <!-- Card 2: Highlight -->
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://highlightoficial.com/" target="_blank" rel="noopener noreferrer"
                     class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
                     <div
-                        class="relative overflow-hidden shadow-2xl rounded-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
+                        class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgHighlight.png" alt="Highlight" class="w-full h-full object-cover">
                     </div>
                 </a>
 
                 <!-- Card 3: Imersão -->
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.behance.net/gallery/210609843/Landing-Page-Imersao-Formar-e-Aproximar"
+                    target="_blank" rel="noopener noreferrer"
                     class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
                     <div
-                        class="relative overflow-hidden shadow-2xl rounded-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
+                        class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgImersão.png" alt="Imersão" class="w-full h-full object-cover">
                     </div>
                 </a>
 
                 <!-- Card 4: Star Ads -->
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.starads.com.br/" target="_blank" rel="noopener noreferrer"
                     class="flex flex-col gap-6 lg:hover:scale-105 transition-all duration-500 group">
                     <div
-                        class="relative overflow-hidden shadow-2xl rounded-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
+                        class="relative overflow-hidden shadow-2xl border border-slate-800/50 hover:border-primary/30 transition-colors">
                         <img src="assets/imgStarads.png" alt="Star Ads" class="w-full h-full object-cover">
                     </div>
                 </a>
@@ -385,10 +451,10 @@
 
             <!-- Behance Link -->
             <div class="mt-24 text-center">
-                <a href="#"
+                <a href="https://www.behance.net/andremks" target="_blank"
                     class="inline-flex items-center gap-4 px-10 py-5 bg-white text-slate-950 font-bold hover:bg-slate-100 transition-all duration-300 shadow-xl tracking-wide">
-                    ACESSAR MEU BEHANCE
-                    <img src="assets/behance.png" alt="Behance" class="w-6 h-auto">
+                    Acessar meu Behance
+                    <img src="assets/behance.png" alt="Behance" class="w-4 h-auto">
                 </a>
             </div>
 
@@ -396,7 +462,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full py-20 bg-slate-900 border-t border-slate-800/50">
+    <footer class="w-full py-20 bg-gray-950 border-t border-slate-800/50">
         <div class="container mx-auto px-6 text-center flex flex-col items-center gap-8">
 
             <!-- Logo e Nome -->
@@ -410,10 +476,11 @@
 
             <!-- Social Links -->
             <div class="flex items-center gap-6">
-                <a href="#" class="hover:opacity-70 transition-opacity">
+                <a href="https://www.linkedin.com/in/andremarquesmks/" target="_blank"
+                    class="hover:opacity-70 transition-opacity">
                     <img src="assets/linkedin.png" alt="LinkedIn" class="h-6 w-auto">
                 </a>
-                <a href="#" class="hover:opacity-70 transition-opacity">
+                <a href="https://www.behance.net/andremks" target="_blank" class="hover:opacity-70 transition-opacity">
                     <img src="assets/behancelight.png" alt="Behance" class="h-6 w-auto">
                 </a>
             </div>
@@ -430,7 +497,7 @@
 
     <!-- WhatsApp Button -->
     <div class="fixed bottom-8 left-8 flex items-center group z-50">
-        <a href="https://api.whatsapp.com/send?phone=5514997560898" target="_blank" rel="noopener noreferrer"
+        <a href="https://web.whatsapp.com/send?phone=5514997560898" target="_blank" rel="noopener noreferrer"
             class="w-14 h-14 bg-[#25D366] text-black flex items-center justify-center shadow-2xl rounded-full hover:scale-110 transition-all duration-300 relative">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -476,6 +543,158 @@
                 behavior: 'smooth'
             });
         });
+
+        // Hamburger Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-x-0');
+
+            if (isOpen) {
+                // Close
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+                menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                // Open
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+                menuToggle.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+
+        // Particle System for "Sobre" and "Portfolio" (Desktop Only)
+        if (window.innerWidth >= 1024) {
+            const particleSections = ['sobre', 'portfolio'];
+
+            particleSections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                const canvas = section.querySelector('.particle-canvas');
+                if (!canvas) return;
+
+                const ctx = canvas.getContext('2d');
+                let particles = [];
+                const particleCount = 260;
+                const mouse = { x: null, y: null, radius: 150 };
+
+                function resizeCanvas() {
+                    canvas.width = section.offsetWidth;
+                    canvas.height = section.offsetHeight;
+                }
+
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+
+                section.addEventListener('mousemove', (e) => {
+                    const rect = section.getBoundingClientRect();
+                    mouse.x = e.clientX - rect.left;
+                    mouse.y = e.clientY - rect.top;
+                });
+
+                section.addEventListener('mouseleave', () => {
+                    mouse.x = null;
+                    mouse.y = null;
+                });
+
+                class Particle {
+                    constructor() {
+                        this.init();
+                    }
+
+                    init() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.size = Math.random() * 2 + 1;
+                        this.baseX = this.x;
+                        this.baseY = this.y;
+                        this.density = (Math.random() * 30) + 1;
+                        this.color = 'rgba(51, 51, 255, 0.4)'; // Opacidade base menor
+                        this.activeColor = 'rgba(51, 51, 255, 1)'; // Opacidade 1 quando ativa
+                        this.isMoving = false;
+                    }
+
+                    draw() {
+                        ctx.fillStyle = this.isMoving ? this.activeColor : this.color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                    update() {
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < mouse.radius && mouse.x !== null) {
+                            let forceDirectionX = dx / distance;
+                            let forceDirectionY = dy / distance;
+                            let maxDistance = mouse.radius;
+                            let force = (maxDistance - distance) / maxDistance;
+                            let directionX = forceDirectionX * force * this.density;
+                            let directionY = forceDirectionY * force * this.density;
+                            this.x -= directionX;
+                            this.y -= directionY;
+                            this.isMoving = true;
+                        } else {
+                            if (this.x !== this.baseX || this.y !== this.baseY) {
+                                let dx = this.x - this.baseX;
+                                let dy = this.y - this.baseY;
+                                this.x -= dx / 15;
+                                this.y -= dy / 15;
+
+                                // Se estiver muito perto da base, para de marcar como movendo
+                                if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+                                    this.isMoving = false;
+                                } else {
+                                    this.isMoving = true;
+                                }
+                            } else {
+                                this.isMoving = false;
+                            }
+                        }
+                    }
+                }
+
+                function init() {
+                    particles = [];
+                    for (let i = 0; i < particleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                init();
+                animate();
+            });
+        }
     </script>
 
 </body>
