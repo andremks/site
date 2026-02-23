@@ -57,7 +57,7 @@
 
         @media (min-width: 1024px) {
             body {
-                background-image: url('assets/bgAndre3-c.png');
+                background-image: url('assets/bgAndre_.png');
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -134,19 +134,61 @@
 
         /* scroll */
         ::-webkit-scrollbar {
-          width: 8px;
+        width: 8px;
         }
-    
+
         ::-webkit-scrollbar-track {
-          background: #120020;
+        background: #120020;
         }
-    
+
         ::-webkit-scrollbar-thumb {
-          background: #330099;
+        background: #330099;
         }
-    
+
         ::-webkit-scrollbar-thumb:hover {
-          background: #21003B;
+        background: #21003B;
+        }
+
+        /* Ribbon Marquee Animations */
+        @keyframes marquee-ltr {
+            0% { transform: translateX(-30%); }
+            100% { transform: translateX(0); }
+        }
+
+        .ribbon-marquee {
+            animation: marquee-ltr 40s linear infinite;
+            display: flex;
+            white-space: nowrap;
+            width: fit-content;
+        }
+
+        .marquee-group {
+            display: flex;
+            flex-shrink: 0;
+            gap: 1rem;
+            padding-right: 1rem;
+        }
+
+        .ribbon {
+            position: absolute;
+            height: 60px;
+            width: 200%;
+            background: rgba(23, 0, 153, 0.45);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            z-index: 5;
+            pointer-events: none;
+            border-top: 1px solid rgba(16, 4, 182, 0.4);
+            border-bottom: 1px solid rgba(16, 4, 182, 0.4);
+            /* Force GPU layer and isolation */
+            transform: translate3d(0,0,0);
+            isolation: isolate;
+            box-shadow: 0 3px 40px rgba(11, 2, 110, 0.9);
+            /* Ensure it paints on load */
+            backface-visibility: hidden;
         }
     </style>
 </head>
@@ -190,11 +232,62 @@
         </div>
     </nav>
 
-    <header class="relative w-full min-h-screen flex items-center overflow-hidden py-20 reveal animate-fade-in">
+    <header class="relative w-full min-h-screen flex items-center overflow-hidden py-20">
+        <!-- Ribbons Component - Desktop Only (Outside fading container to fix blur) -->
+        <div class="hidden lg:block absolute top-0 right-0 w-full h-full pointer-events-none z-20">
+            <!-- Ribbon 1 -->
+            <div class="ribbon top-[45%] -right-4/4 rotate-[-45deg]">
+                <div class="ribbon-marquee text-[32px] font-bold text-white uppercase tracking-tighter">
+                    <div class="marquee-group">
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                    </div>
+                    <div class="marquee-group">
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Ribbon 2 -->
+            <div class="ribbon top-[65%] -right-4/4 -rotate-[20deg]">
+                <div class="ribbon-marquee text-[32px] font-bold text-white uppercase tracking-tighter">
+                    <div class="marquee-group">
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                    </div>
+                    <div class="marquee-group">
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                        <span>André Marques &nbsp; * &nbsp; Ux Ui Designer &nbsp; * &nbsp; </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Overlay Texture/Color if needed to ensure text readability over bg.png -->
         <!-- <div class="absolute inset-0 bg-slate-900/40 pointer-events-none"></div> -->
 
-        <div class="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
+        <div
+            class="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center reveal animate-fade-in">
 
             <!-- Logo -->
             <div class="absolute top-2 left-6 md:left-12 reveal animate-fade-in-delayed">
@@ -410,7 +503,7 @@
                     </div>
 
                     <div class="mt-8 reveal animate-fade-up-delayed-2">
-                        <a href="https://web.whatsapp.com/send?phone=5514997560898" target="_blank"
+                        <a href="#"
                             class="px-8 py-4 bg-white text-slate-950 font-bold hover:bg-slate-200 transition-all duration-300 flex items-center justify-center gap-3 group shadow-lg">
                             Entrar em Contato
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -789,13 +882,22 @@
         document.querySelectorAll('.reveal').forEach(el => {
             revealObserver.observe(el);
         });
+
+        // Force backdrop-filter repaint on load and scroll (Chromium fix)
+        function forceRepaint() {
+            const ribbons = document.querySelectorAll('.ribbon');
+            ribbons.forEach(ribbon => {
+                ribbon.style.transform = 'translate3d(0,0,0) scale(1.001)';
+                requestAnimationFrame(() => {
+                    ribbon.style.transform = 'translate3d(0,0,0)';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', forceRepaint);
+        window.addEventListener('load', forceRepaint);
     </script>
 
 </body>
 
 </html>
-
-
-
-
-
