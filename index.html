@@ -22,6 +22,8 @@
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
     </script>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Chart.js CDN — utilizado para os gráficos Radar de Competências -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
@@ -198,8 +200,8 @@
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         }
         .logo-group img {
-            height: 36px !important;
-            max-height: 36px !important;
+            height: 46px !important;
+            max-height: 46px !important;
             width: auto !important;
             object-fit: contain;
             user-select: none;
@@ -207,8 +209,8 @@
         }
         @media (min-width: 768px) {
             .logo-group img {
-                height: 48px !important;
-                max-height: 48px !important;
+                height: 80px !important;
+                max-height: 80px !important;
             }
         }
     </style>
@@ -241,6 +243,8 @@
         <div class="flex flex-col gap-8">
             <a href="#" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Home</a>
             <a href="#sobre" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Sobre</a>
+            <a href="#competencias"
+                class="menu-link text-4xl font-bold hover:text-primary transition-colors">Competências</a>
             <a href="#parceiros" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Cases</a>
             <a href="#portfolio" class="menu-link text-4xl font-bold hover:text-primary transition-colors">Portfólio</a>
 
@@ -565,7 +569,7 @@
                                 <!-- Borda Interna (Gradiente) -->
                                 <div
                                     class="relative w-72 h-72 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full overflow-hidden border-8 border-slate-900/80">
-                                    <img src="assets/FotoAndre2.png" alt="André Marques"
+                                    <img src="assets/FotoAndre3.png" alt="André Marques"
                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                 </div>
                             </div>
@@ -573,6 +577,85 @@
                     </div>
                 </div>
 
+            </div>
+    </section>
+
+
+    <section id="competencias" class="relative w-full py-32 bg-slate-950 overflow-hidden border-t border-slate-900/50">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute -bottom-40 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col items-center text-center mb-20 max-w-3xl mx-auto">
+                <div
+                    class="flex items-center gap-2 text-slate-400 text-sm font-medium mb-3 reveal animate-fade-up-delayed-1">
+                    <span> Competências & Stack Tecnológica</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 py-2 reveal animate-fade-up">
+                    Habilidades & Ferramentas
+                </h2>
+                <p
+                    class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed reveal animate-fade-up-delayed-2">
+                    Combino estratégia, design e desenvolvimento para criar experiências digitais completas. Da pesquisa
+                    com usuários à implementação em WordPress, transformo problemas em soluções intuitivas, funcionais e
+                    orientadas a resultados.
+                </p>
+            </div>
+
+            <!-- Two Column Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+                <!-- COLUNA 1 -->
+                <div class="flex flex-col items-center lg:items-start gap-6 reveal animate-fade-up-delayed-1">
+                    <div class="flex flex-col gap-2 text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                            Design & UX
+                        </h3>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                            Pesquisa, estratégia e experiência do usuário.
+                        </p>
+                    </div>
+
+                    <!-- Radar Container Design -->
+                    <div id="designRadar"
+                        class="relative w-full max-w-sm lg:max-w-none mx-auto h-[350px] md:h-[400px] rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl shadow-2xl p-6 flex items-center justify-center transition-all duration-500 hover:border-white/10 group overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none">
+                        </div>
+                        <!-- Subtle indicator inside the container -->
+                        <div
+                            class="text-slate-500 text-xs font-mono uppercase tracking-widest pointer-events-none opacity-50 group-hover:opacity-80 transition-opacity duration-300">
+                            [ designRadar ]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA 2 -->
+                <div class="flex flex-col items-center lg:items-start gap-6 reveal animate-fade-up-delayed-2">
+                    <div class="flex flex-col gap-2 text-center lg:text-left">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                            Tecnologia & Ferramentas
+                        </h3>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                            Implementação, desenvolvimento e otimização.
+                        </p>
+                    </div>
+
+                    <!-- Radar Container Tech -->
+                    <div id="techRadar"
+                        class="relative w-full max-w-sm lg:max-w-none mx-auto h-[350px] md:h-[400px] rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl shadow-2xl p-6 flex items-center justify-center transition-all duration-500 hover:border-white/10 group overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent pointer-events-none">
+                        </div>
+                        <!-- Subtle indicator inside the container -->
+                        <div
+                            class="text-slate-500 text-xs font-mono uppercase tracking-widest pointer-events-none opacity-50 group-hover:opacity-80 transition-opacity duration-300">
+                            [ techRadar ]
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -586,7 +669,7 @@
                     Projetos & Cases
                 </h2>
                 <p lass="flex items-center text-sm font-medium reveal animate-fade-up-delayed-1">
-                    <span>&mdash; Experiências digitais projetadas no Figma e construídas no WordPress &mdash; </span>
+                    &mdash; Experiências digitais projetadas no Figma e construídas no WordPress &mdash;
                 </p>
             </div>
 
@@ -1428,6 +1511,321 @@
             });
 
             requestAnimationFrame(animateCarousel);
+        })();
+    </script>
+
+    <!-- ============================================================
+         RADAR CHARTS — Competências & Stack Tecnológica
+         Inicializados via JavaScript Vanilla com Chart.js
+         Os <canvas> são criados dinamicamente para não alterar o HTML
+    ============================================================ -->
+    <script>
+        (function () {
+            'use strict';
+
+            /* ----------------------------------------------------------
+             * 1. UTILITÁRIOS
+             * Resolve a cor primária do CSS custom property do site.
+             * Se a variável não existir, usa o fallback de design.
+             * ---------------------------------------------------------- */
+            function resolvePrimaryColor() {
+                const raw = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--color-primary')
+                    .trim();
+                // Retorna o valor se existir, senão usa o fallback premium
+                return raw || '#6366F1';
+            }
+
+            /* ----------------------------------------------------------
+             * 2. PALETA DE CORES
+             * Centraliza todas as cores usadas nos dois gráficos.
+             * Garante consistência visual com o tema dark do portfólio.
+             * ---------------------------------------------------------- */
+            const PRIMARY = resolvePrimaryColor();
+            const COLOR_STROKE = 'rgba(99,102,241,0.85)';  // Borda do polígono
+            const COLOR_FILL = 'rgba(99,102,241,0.18)';  // Preenchimento suave
+            const COLOR_FILL_H = 'rgba(99,102,241,0.30)';  // Preenchimento no hover
+            const COLOR_POINT = 'rgba(99,102,241,1.00)';  // Pontos discretos
+            const COLOR_GRID = 'rgba(255,255,255,0.07)'; // Linhas de grade
+            const COLOR_TICK = 'rgba(255,255,255,0.00)'; // Valores radiais ocultos
+            const COLOR_LABEL = 'rgba(255,255,255,0.80)'; // Labels das competências
+            const COLOR_BG = 'transparent';             // Fundo do canvas
+
+            /* ----------------------------------------------------------
+             * 3. TIPOGRAFIA
+             * Fonte elegante para labels e tooltips.
+             * Usa a Bricolage Grotesque já carregada no site.
+             * ---------------------------------------------------------- */
+            const FONT_FAMILY = '"Bricolage Grotesque", system-ui, sans-serif';
+            const FONT_SIZE_LABEL = 11;
+            const FONT_SIZE_TOOLTIP = 12;
+
+            /* ----------------------------------------------------------
+             * 4. DADOS — GRÁFICO 1: Design & UX
+             * Labels e scores do radar de competências de Design.
+             * ---------------------------------------------------------- */
+            const DESIGN_LABELS = [
+                'UX Research',
+                'Information\nArchitecture',
+                'Wireframing',
+                'UI Design',
+                'Design Systems',
+                'Prototyping',
+                'Usability',
+                'Accessibility',
+            ];
+
+            const DESIGN_DATA = [88, 90, 95, 96, 92, 97, 93, 86];
+
+            /* ----------------------------------------------------------
+             * 5. DADOS — GRÁFICO 2: Tecnologia & Ferramentas
+             * Labels e scores do radar de competências Técnicas.
+             * ---------------------------------------------------------- */
+            const TECH_LABELS = [
+                'WordPress',
+                'Elementor',
+                'Figma',
+                'HTML/CSS',
+                'JavaScript',
+                'Adobe CC',
+                'PHP',
+                'Technical SEO',
+            ];
+
+            const TECH_DATA = [97, 99, 98, 92, 80, 90, 70, 84];
+
+            /* ----------------------------------------------------------
+             * 6. DATASET FACTORY
+             * Função reutilizável que cria o objeto de dataset
+             * padronizado para os dois gráficos.
+             * ---------------------------------------------------------- */
+            function buildDataset(data) {
+                return [{
+                    data: data,
+                    fill: true,
+                    backgroundColor: COLOR_FILL,
+                    borderColor: COLOR_STROKE,
+                    borderWidth: 2,
+                    pointBackgroundColor: COLOR_POINT,
+                    pointBorderColor: 'rgba(255,255,255,0.15)',
+                    pointBorderWidth: 1.5,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: COLOR_STROKE,
+                    pointHoverBorderWidth: 2,
+                    tension: 0.1,
+                }];
+            }
+
+            /* ----------------------------------------------------------
+             * 7. OPÇÕES GLOBAIS DO GRÁFICO
+             * Configuração compartilhada pelos dois radars:
+             * responsivo, animação suave, tooltip premium, grid sutil.
+             * ---------------------------------------------------------- */
+            function buildOptions(titleText) {
+                return {
+                    responsive: true,
+                    maintainAspectRatio: false,
+
+                    // Animação suave e lenta — disparada pelo scroll via IntersectionObserver
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeInOutSine',
+                    },
+
+                    plugins: {
+                        // Sem legenda — o título da seção já contextualiza
+                        legend: { display: false },
+
+                        // Título interno elegante
+                        title: {
+                            display: true,
+                            text: titleText,
+                            color: 'rgba(255,255,255,0.50)',
+                            font: {
+                                family: FONT_FAMILY,
+                                size: 11,
+                                weight: '500',
+                            },
+                            padding: { bottom: 12 },
+                        },
+
+                        // Tooltip premium com fundo glassmorphic
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: 'rgba(15,15,30,0.88)',
+                            borderColor: 'rgba(99,102,241,0.35)',
+                            borderWidth: 1,
+                            titleColor: 'rgba(255,255,255,0.90)',
+                            bodyColor: 'rgba(160,160,220,0.90)',
+                            padding: { x: 14, y: 10 },
+                            cornerRadius: 10,
+                            displayColors: false,
+                            titleFont: {
+                                family: FONT_FAMILY,
+                                size: FONT_SIZE_TOOLTIP,
+                                weight: '600',
+                            },
+                            bodyFont: {
+                                family: FONT_FAMILY,
+                                size: FONT_SIZE_TOOLTIP,
+                            },
+                            // Exibe o score com unidade de competência
+                            callbacks: {
+                                label: function (ctx) {
+                                    return `  Nível: ${ctx.raw} / 100`;
+                                },
+                            },
+                        },
+                    },
+
+                    // Escalas do Radar
+                    scales: {
+                        r: {
+                            // Escala de 0 a 100
+                            min: 50,
+                            max: 100,
+                            ticks: {
+                                stepSize: 10,
+                                display: false,   // Valores numéricos ocultos
+                                color: COLOR_TICK,
+                                backdropColor: 'transparent',
+                            },
+                            // Linhas de grade sutis
+                            grid: {
+                                color: COLOR_GRID,
+                                lineWidth: 1,
+                            },
+                            // Linhas angulares (raios) discretas
+                            angleLines: {
+                                display: true,
+                                color: 'rgba(255,255,255,0.06)',
+                                lineWidth: 1,
+                            },
+                            // Labels das competências
+                            pointLabels: {
+                                display: true,
+                                color: COLOR_LABEL,
+                                font: {
+                                    family: FONT_FAMILY,
+                                    size: FONT_SIZE_LABEL,
+                                    weight: '500',
+                                },
+                                padding: 12,
+                            },
+                        },
+                    },
+                };
+            }
+
+            /* ----------------------------------------------------------
+             * 8. FACTORY DE CANVAS
+             * Cria e injeta um <canvas> dentro do container existente.
+             * Não altera o HTML original da seção — apenas insere o canvas.
+             * ---------------------------------------------------------- */
+            function createCanvas(containerId) {
+                const container = document.getElementById(containerId);
+                if (!container) return null;
+
+                // Remove o placeholder de texto de indicação
+                const placeholder = container.querySelector('div:not(.absolute)');
+                if (placeholder) placeholder.remove();
+
+                // Cria o canvas com estilo adequado ao container
+                const canvas = document.createElement('canvas');
+                canvas.style.cssText = [
+                    'position: absolute',
+                    'inset: 0',
+                    'width: 100%',
+                    'height: 100%',
+                ].join(';');
+
+                container.appendChild(canvas);
+                return canvas;
+            }
+
+            /* ----------------------------------------------------------
+             * 9. MONTAGEM INDIVIDUAL DE CADA GRÁFICO
+             * Funções isoladas para instanciar cada radar separadamente.
+             * Chamadas de forma lazy, somente quando o container entrar
+             * na viewport do browser.
+             * ---------------------------------------------------------- */
+
+            // Monta o gráfico de Design & UX dentro do #designRadar
+            function mountDesignChart() {
+                const canvas = createCanvas('designRadar');
+                if (!canvas) return;
+                new Chart(canvas, {
+                    type: 'radar',
+                    data: {
+                        labels: DESIGN_LABELS,
+                        datasets: buildDataset(DESIGN_DATA),
+                    },
+                    options: buildOptions(''),
+                });
+            }
+
+            // Monta o gráfico de Tecnologia & Ferramentas dentro do #techRadar
+            function mountTechChart() {
+                const canvas = createCanvas('techRadar');
+                if (!canvas) return;
+                new Chart(canvas, {
+                    type: 'radar',
+                    data: {
+                        labels: TECH_LABELS,
+                        datasets: buildDataset(TECH_DATA),
+                    },
+                    options: buildOptions(''),
+                });
+            }
+
+            /* ----------------------------------------------------------
+             * 10. DISPARO INDEPENDENTE POR CONTAINER
+             * Utilitário genérico: observa um elemento e, quando ele
+             * atinge o threshold de visibilidade, aguarda o delay
+             * configurado e executa o callback de montagem.
+             * Cada container (#designRadar / #techRadar) tem seu próprio
+             * IntersectionObserver — animam de forma independente conforme
+             * o usuário rola a página e cada bloco entra na tela.
+             * ---------------------------------------------------------- */
+            function observeContainer(containerId, mountFn, delayMs) {
+                const el = document.getElementById(containerId);
+
+                // Fallback: se o elemento não existir, monta imediatamente
+                if (!el) { mountFn(); return; }
+
+                const observer = new IntersectionObserver(
+                    function (entries, obs) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                // Delay de 1s após o container entrar na viewport
+                                setTimeout(mountFn, delayMs);
+                                // Desconecta após o primeiro disparo (one-shot)
+                                obs.unobserve(el);
+                            }
+                        });
+                    },
+                    // Dispara quando pelo menos 40% do container estiver visível,
+                    // garantindo que o usuário já possa ver o gráfico completamente
+                    { threshold: 0.40 }
+                );
+
+                observer.observe(el);
+            }
+
+            // Configura os dois observers independentes após o DOM estar pronto
+            function setupObservers() {
+                observeContainer('designRadar', mountDesignChart, 1000);
+                observeContainer('techRadar', mountTechChart, 1000);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupObservers);
+            } else {
+                setupObservers();
+            }
+
         })();
     </script>
 
